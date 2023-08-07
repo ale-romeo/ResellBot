@@ -1,0 +1,26 @@
+# kith_bot.kv
+
+<SneakerApp>:
+    orientation: 'vertical'
+    spacing: '5dp'
+    size_hint: None, None
+    size: '800dp', '600dp'
+    color_dark: (0.2, 0.2, 0.2, 1)
+    color_light: (0.8, 0.8, 0.8, 1)
+    color_accent: (0.5, 0, 0.5, 1)
+
+    TextInput:
+        id: textbox
+        readonly: True
+        multiline: True
+        background_color: root.color_dark
+        foreground_color: root.color_light
+        font_size: '16sp'
+
+    Button:
+        text: 'Start Scraping'
+        size_hint: None, None
+        size: '150dp', '50dp'
+        background_color: root.color_accent
+        font_size: '18sp'
+        on_press: app.scrape_sneaker_info(root)

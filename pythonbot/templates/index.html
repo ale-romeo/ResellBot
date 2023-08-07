@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Kith Sneaker Scraper</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Kith Sneaker Scraper</h1>
+    </div>
+    {% for sneaker in scraped_data %}
+    <div class="sneaker">
+        <h2>{{ sneaker.title }}</h2>
+        <p><strong>Color:</strong> {{ sneaker.color }}</p>
+        <p><strong>Availability:</strong> {{ sneaker.availability }}</p>
+        <p><strong>Link:</strong> <a href="{{ sneaker.link }}">{{ sneaker.link }}</a></p>
+    </div>
+    {% endfor %}
+</body>
+</html>
